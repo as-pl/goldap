@@ -1,8 +1,8 @@
 package message
 
 import (
-	"errors"
 	"fmt"
+	"log"
 )
 
 //
@@ -52,7 +52,8 @@ func (control *Control) readComponents(bytes *Bytes) (err error) {
 				return
 			}
 			if control.criticality == false {
-				err = errors.New(fmt.Sprintf("readComponents: criticality default value FALSE should not be specified"))
+				//err = errors.New(fmt.Sprintf("readComponents: criticality default value FALSE should not be specified"))
+				log.Printf("Ignoring criticality=false (Rocket.Chat compatibility)")
 				return
 			}
 		}
