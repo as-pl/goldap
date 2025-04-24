@@ -54,7 +54,6 @@ func (control *Control) readComponents(bytes *Bytes) (err error) {
 			if control.criticality == false {
 				//err = errors.New(fmt.Sprintf("readComponents: criticality default value FALSE should not be specified"))
 				log.Printf("Ignoring criticality=false (Rocket.Chat compatibility)")
-				return
 			}
 		}
 	}
